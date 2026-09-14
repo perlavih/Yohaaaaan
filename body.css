@@ -1,0 +1,521 @@
+
+:root {
+
+  /* Text Colors: */
+  --text-color: #3c004b;
+  --link-color: #61148d;
+  --link-color-hover: #a23cca;
+
+  /* Text: */
+  --font: Arial, sans-serif;
+  --heading-font: Georgia, serif;
+  --font-size: 14px;
+
+  /* Other Settings: */
+  --margin: 20px;
+  --padding: 20px;
+  --round-borders: 50px;
+  --sidebar-width: 260px;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@font-face {
+  font-family: Kelvinized;
+  src: url(assets/fonts/Kelvinized.woff2);
+}
+
+@font-face {
+  font-family: Pixelta;
+  src: url(assets/fonts/Pixelta.woff2);
+}
+
+@font-face {
+  font-family: KiwiSoda;
+  src: url(assets/fonts/KiwiSoda.ttf);
+}
+
+@font-face {
+  font-family: novem;
+  src: url(assets/fonts/novem___.ttf);
+}
+
+@font-face {
+  font-family: Pixelify Sans;
+  src: url(assets/fonts/PixelifySans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: The Lowly Scribe;
+  src: url(assets/fonts/the-lowly-scribe.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: #c0c0c0;
+}
+
+::-webkit-scrollbar-corner {
+  background: #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-button {
+  background-color: #c0c0c0;
+  border: 1px solid #373737;
+  border-top-color: #c0c0c0;
+  border-left-color: #c0c0c0;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #888;
+}
+
+::-webkit-scrollbar-thumb {
+  min-width: 16px;
+  min-height: 16px;
+  cursor: url("assets/windows-7-black-infernal-10/aero_move.cur"), grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+  cursor: url("assets/windows-7-black-infernal-10/aero_move.cur"), grabbing;
+}
+
+::-webkit-scrollbar-track {
+  background-blend-mode: normal, difference, normal;
+  background-size: 3px 3px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    linear-gradient(to right, #000 50%, #fff 50%),
+    linear-gradient(to bottom, #000 50%, #fff 50%);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px;
+}
+
+::-webkit-scrollbar-button:start:decrement:active,
+::-webkit-scrollbar-button:end:increment:active {
+  border: 1px solid #888;
+  box-shadow: none;
+  background-position: 3.2px 3.2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg transform='rotate(180)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.86 6.86'%3E%3Cpath fill='%231d1d1b' d='M4.41 2.94v-.98h-.98V.98h-.98V0h-.98V6.86h.98v-.98h.98V4.9h.98v-.98h.98v-.98h-.98z'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+  background-image: url("data:image/svg+xml,%3Csvg transform='rotate(0)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.86 6.86'%3E%3Cpath fill='%231d1d1b' d='M4.41 2.94v-.98h-.98V.98h-.98V0h-.98V6.86h.98v-.98h.98V4.9h.98v-.98h.98v-.98h-.98z'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg transform='rotate(270)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.86 6.86'%3E%3Cpath fill='%231d1d1b' d='M4.41 2.94v-.98h-.98V.98h-.98V0h-.98V6.86h.98v-.98h.98V4.9h.98v-.98h.98v-.98h-.98z'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg transform='rotate(90)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.86 6.86'%3E%3Cpath fill='%231d1d1b' d='M4.41 2.94v-.98h-.98V.98h-.98V0h-.98V6.86h.98v-.98h.98V4.9h.98v-.98h.98v-.98h-.98z'/%3E%3C/svg%3E");
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: #888 #c0c0c0;
+    scrollbar-width: auto;
+  }
+}
+
+html {
+  cursor: url("assets/windows-7-black-infernal-10/aero_arrow.cur"), auto;
+}
+
+a[href],
+button,
+select,
+option,
+optgroup,
+.window-button {
+  cursor: url("assets/windows-7-black-infernal-10/aero_link.cur"), pointer;
+}
+
+p,
+li,
+h1, h2, h3, h4, h5, h6,
+figcaption,
+textarea,
+input:not([type]),
+input:is([type="text"], [type="search"], [type="email"], [type="url"], [type="tel"], [type="password"], [type="number"]),
+[contenteditable="true"] {
+  cursor: url("assets/windows-7-black-infernal-10/aero_text.cur"), text;
+}
+
+:is(a[href], button, .window-button) * {
+  cursor: inherit;
+}
+
+input[type="range"],
+[draggable="true"] {
+  cursor: url("assets/windows-7-black-infernal-10/aero_move.cur"), grab;
+}
+
+input[type="range"]:active,
+[draggable="true"]:active {
+  cursor: url("assets/windows-7-black-infernal-10/aero_move.cur"), grabbing;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font);
+  line-height: 1.2;
+  background: #9D07FC;
+  background: linear-gradient(0deg, #9D07FC 0%, #7715BD 25%, #470A7D 50%, #24084D 75%, #0B0116 100%);
+  color: var(--text-color);
+  cursor: url("assets/windows-7-black-infernal-10/aero_arrow.cur"), auto;
+}
+
+body > canvas,
+.cursor-effects-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.piso {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.link {
+  margin-left: 300px;
+  background: -webkit-linear-gradient(rgb(233, 232, 232), rgb(143, 143, 143));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  font-family: monospace;
+  font-style: italic;
+  font-size: 1.5em;
+  line-height: 1;
+  z-index: 1000;
+  margin-top: 20px;
+}
+
+.yohan1 {
+  position: absolute;
+  top: 33%;
+  left: 3%;
+  max-width: 200px;
+  z-index: 1000;
+  pointer-events: none;
+  scale: -1 1;
+  animation: floating 3s infinite ease-in-out;
+}
+
+.yohan2 {
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+  max-width: 250px;
+  z-index: 1000;
+  pointer-events: none;
+  animation: floating 3s infinite ease-in-out;
+}
+
+.yohan3 {
+  position: absolute;
+  top: 3%;
+  right: 22%;
+  max-width: 400px;
+  z-index: 1000;
+  pointer-events: none;
+  rotate: -17deg;
+  animation: floating2 3s infinite ease-in-out;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2 * var(--margin));
+  font-size: var(--font-size);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: var(--margin);
+  padding: 10px;
+  border-radius: 80px 80px 30px 30px;
+  border: 5px groove #C0C0C0;
+}
+
+.layout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 75px 75px 25px 25px;
+  pointer-events: none;
+  background: url(assets/wallpaper/pattern.png) repeat;
+  background-size: 10px;
+  animation: layout-background-scroll 10s linear infinite;
+}
+
+.main-content {
+  display: grid;
+  grid-template:
+    "leftSidebar main" 1fr / var(--sidebar-width) minmax(0, 1fr);
+  gap: 10px;
+  flex-grow: 1;
+}
+
+::selection {
+  background: rgba(192, 87, 224, 0.603);
+}
+
+mark {
+  text-shadow: 1px 1px 4px var(--link-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
+.image {
+  display: block;
+
+  max-width: 100%;
+}
+
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Authentic Frutiger Aero Button CSS */
+.frutiger-aero-button {
+  /* OKLCH Color System for accurate colors */
+  --hue: 300;
+  --sat: 0.48;
+  --glow-intensity: 0.6;
+
+  /* Color Variables */
+  --fg: oklch(15% calc(var(--sat) * 0.5) var(--hue));
+  --bg: oklch(75% var(--sat) var(--hue) / 0.8);
+  --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
+  --bottom-glow: radial-gradient(
+    farthest-corner at bottom center,
+    rgba(255, 255, 255, var(--glow-intensity)),
+    transparent
+  );
+
+  /* Base Styling */
+  background-color: var(--bg);
+  background:
+    var(--bottom-glow),
+    linear-gradient(to bottom, var(--bg-dark), var(--bg));
+
+  border: 1px solid var(--bg);
+  border-radius: 5px;
+  width: auto;
+  padding: 0.5em 0.5em;
+  font-size: 1.7em;
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Shadows and Effects */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+
+  /* Typography */
+  color: var(--fg);
+  font-weight: 700;
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  font-width: 2em;
+
+  /* Layout */
+  cursor: url("assets/windows-7-black-infernal-10/aero_link.cur"), pointer;
+  position: relative;
+  transition: all 300ms ease;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Diagonal Glass Shine Sweep — the classic Web 2.0 glare streak */
+.frutiger-aero-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Top Highlight Effect */
+.frutiger-aero-button::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+/* Hover State */
+.frutiger-aero-button:hover,
+.frutiger-aero-button:focus {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Active State */
+.frutiger-aero-button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+.frutiger-aero-button-rounded {
+  /* OKLCH Color System for accurate colors */
+  --hue: 300;
+  --sat: 0.48;
+  --glow-intensity: 0.6;
+
+  /* Color Variables */
+  --fg: oklch(15% calc(var(--sat) * 0.5) var(--hue));
+  --bg: oklch(75% var(--sat) var(--hue) / 0.8);
+  --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
+  --bottom-glow: radial-gradient(
+    farthest-corner at bottom center,
+    rgba(255, 255, 255, var(--glow-intensity)),
+    transparent
+  );
+    /* Base Styling */
+  background-color: var(--bg);
+  background:
+    var(--bottom-glow),
+    linear-gradient(to bottom, var(--bg-dark), var(--bg));
+
+  border: 1px solid var(--bg);
+  border-radius: 9999px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.3em 1.5em;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Shadows and Effects */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+
+  /* Typography */
+  color: var(--fg);
+  font-weight: 700;
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  font-width: 2em;
+
+  /* Layout */
+  cursor: url("assets/windows-7-black-infernal-10/aero_link.cur"), pointer;
+  position: relative;
+  transition: all 300ms ease;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Diagonal Glass Shine Sweep — the classic Web 2.0 glare streak */
+.frutiger-aero-button-rounded::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Top Highlight Effect */
+.frutiger-aero-button-rounded::after {
+  
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+/* Hover State */
+.frutiger-aero-button-rounded:hover,
+.frutiger-aero-button-rounded:focus {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Active State */
+.frutiger-aero-button-rounded:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}

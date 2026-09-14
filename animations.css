@@ -1,0 +1,97 @@
+@keyframes buttons-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes layout-background-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes blinkies-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout::before,
+  .marquee-group,
+  .blinkies .marquee-track {
+    animation: none;
+  }
+}
+
+
+.wobble:nth-child(4n+1) {
+-webkit-animation:tumblrwobble 4s ease-in-out -.5s infinite;
+animation:tumblrwobble 4s ease-in-out -.5s infinite
+}
+
+@keyframes tumblrwobble{
+0%  { transform:translateY(5%) skew(3deg) }
+25% { transform:translateY(-5%) }
+50% { transform:translateY(5%) skew(-3deg) }
+75% { transform:translateY(-5%) }
+to { transform:translateY(5%) skew(3deg) }
+}
+
+@-webkit-keyframes tumblrwobble{
+0%  { transform:translateY(5%) skew(3deg) }
+25% { transform:translateY(-5%) }
+50% { transform:translateY(5%) skew(-3deg) }
+75% { transform:translateY(-5%) }
+to { transform:translateY(5%) skew(3deg) }
+}
+
+.wobble:nth-child(4n+2){
+-webkit-animation:tumblrwobble 4s ease-in-out -1s infinite;
+animation:tumblrwobble 4s ease-in-out -1s infinite;
+}
+
+.wobble:nth-child(4n+3){
+-webkit-animation:tumblrwobble 4s ease-in-out -1.5s infinite;
+animation:tumblrwobble 4s ease-in-out -1.5s infinite;
+}
+
+.wobble:nth-child(4n){
+-webkit-animation:tumblrwobble 4s ease-in-out 0s infinite;
+animation:tumblrwobble 4s ease-in-out 0s infinite;
+}
+
+.float {
+font-size:2em;
+color: #000;
+animation-name: floating;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+0% { transform: translate(0, 0px); }
+50% { transform: translate(0, 15px); }
+100% { transform: translate(0, -0px); }
+}
+
+@-webkit-keyframes rotate {
+	  from { 	-webkit-transform:rotate(0deg); }
+  to { -webkit-transform:rotate(360deg); }
+}
+
+@keyframes floating2 {
+0% { transform: translate(0, 0px); }
+50% { transform: translate(0, 5px);}
+100% { transform: translate(0, 0px); }
+}

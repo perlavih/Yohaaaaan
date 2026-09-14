@@ -1,0 +1,590 @@
+header {
+  min-height: 320px;
+  border-radius: 70px 70px 0 0;
+    background: url(assets/wallpaper/frutiger_metro__by_nezukorempadeviart07_dix0h0p.png) no-repeat top center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  border-color: #ebebeb;
+  border-width: 5px;
+  border-style: groove;
+  margin-bottom: 10px;
+}
+
+.marquee {
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to bottom, #9607A6, #21033A);
+  border-top: 5px groove #ebebeb;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  width: 100%;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+  min-width: 100%;
+  gap: 50px;
+  padding-right: 50px;
+  font-family: "kelvinized", 'Times New Roman', Times, serif;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.tumblrwob {
+  display:flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  justify-content:center;
+  white-space:pre;
+  font-size: 2em;
+  font-family: kelvinized, 'Times New Roman', Times, serif;
+  color: #dfdfdf;
+  text-shadow: 0 0 10px #fff, 0 0
+}
+
+
+.header-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-image img {
+  width: 100%;
+  height: auto;
+}
+
+.botões {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.botões > a {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+.botões div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.botões p {
+  min-width: 0;
+  margin-right: auto;
+  font-weight: 1000;
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoria h1 {
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1;
+  color: var(--text-color);
+  font-family: KiwiSoda, 'Times New Roman', Times, serif;
+  letter-spacing: 0.07em;
+}
+
+hr.aside {
+  margin: 15px -7px 7px -7px;
+}
+
+.blinkies {
+  display: flex;
+  height: 30px;
+  overflow: hidden;
+  min-width: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.blinkies .marquee-track {
+  width: max-content;
+  flex-shrink: 0;
+  height: 100%;
+  animation: blinkies-scroll 20s linear infinite;
+}
+
+.blinkie-group {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  height: 100%;
+}
+
+.blinkie-group img {
+  display: block;
+  flex-shrink: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  image-rendering: pixelated;
+}
+
+.left-sidebar {
+  grid-area: leftSidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.lower-sidebar {
+  align-self: flex-start;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+main > .title-bar {
+  flex-shrink: 0;
+}
+
+main > .window-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+main > .window-body > .fieldset {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+main > .window-body > .fieldset > * {
+  flex-shrink: 0;
+}
+
+main .fieldset > .buttons {
+  flex-grow: 1;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid white;
+  margin: 7px -7px;
+}
+
+.text-area {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  width: 100%;
+}
+
+.text-area h1 {
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1;
+  color: var(--text-color);
+  font-family: KiwiSoda, 'Times New Roman', Times, serif;
+  letter-spacing: 0.07em;
+}
+
+.aviso {
+  font-size: 1.1em;
+  color: var(--text-color);
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+}
+
+.text-area p {
+  margin: 0;
+  line-height: 1.3;
+  color: var(--text-color);
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo .up {
+  align-self: flex-start;
+} 
+
+.titulo h1 {
+  text-align: center;
+  align-self: center;
+}
+
+.titulo .down {
+  align-self: flex-end;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  
+}
+
+.gatos-imagens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 12px;
+}
+
+.gatos-imagens > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.fatos {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.fatos .button {
+  margin: 0;
+}
+
+.fatos p {
+  font-size: 14px;
+  color: white;
+  text-shadow: 1px 1px 2px #0000008e;
+}
+
+.sobre {
+  container-type: inline-size;
+}
+
+@container (max-width: 260px) {
+  .fatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .fatos .button {
+    width: fit-content;
+    min-width: 0;
+    padding-inline: 10px;
+    text-align: center;
+  }
+
+  .fatos p {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+.button {
+  --hue: 300;
+  --sat: 0.48;
+  --bg: oklch(75% var(--sat) var(--hue));
+  --bg-dark: oklch(45% var(--sat) var(--hue));
+  --bottom-glow: radial-gradient(
+  farthest-corner at bottom center,
+  rgb(255 255 255 / 0.6),
+  transparent);
+  background-color: var(--bg);
+  background:
+  var(--bottom-glow),
+  linear-gradient(to bottom, var(--bg-dark), var(--bg));
+  border: 1px solid rgba(255, 255, 255, 0.699);
+  padding: 0px 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 100px;
+  margin: 0 0 3px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+  cursor: url(assets/windows-7-black-infernal-10/aero_link.cur), pointer;
+}
+
+.button p {
+  cursor: url(assets/windows-7-black-infernal-10/aero_link.cur), pointer;
+}
+
+.button:hover {
+  transform: scale(1.07);
+}
+
+article.interesses {
+  flex-direction: column;
+}
+
+.listas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.lista > ul {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  margin: 0.5em auto;
+}
+
+.lista li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-align: left;
+}
+
+.lista li::before {
+  content: "";
+  flex: 0 0 16px;
+  height: 16px;
+  background: url(assets/stickers/pngwing.png) center / contain no-repeat;
+}
+
+.lista p {
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.lista h2 {
+  font-size: 1.3em;
+  align-self: center;
+  text-decoration: underline;
+  color: var(--text-color);
+  font-family: Pixelify Sans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.buttons-track,
+.buttons-group {
+  display: contents;
+}
+
+.buttons-group[aria-hidden="true"] {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: auto;
+}
+
+footer {
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  padding: 18px 15px 15px 15px;
+  background: linear-gradient(to top, #9607A6, #21033A);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  text-align: center;
+  border: 5px groove #ebebeb;
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px #000;
+  color: white;
+  font-family: Pixelta, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+footer a {
+  color: var(--link-color-hover);
+  text-decoration: none;
+}
+
+footer strong {
+  font-weight: bold;
+  color: var(--link-color-hover);
+}
+
+/*A vast majority of this styling comes from 98.css code, if you're making a full windows 98 theme, I suggest you use the stylesheet this is sourced from - https://jdan.github.io/98.css/ */
+
+.title-bar-controls button {
+border:none;
+border-radius:0;
+box-sizing:border-box;
+color:transparent;
+min-height:23px;
+min-width:75px;
+padding:0 12px;
+text-shadow:0 0 #222;
+}
+
+.title-bar-controls button {
+background:silver;
+box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+.title-bar-controls button:not(:disabled):active {
+box-shadow:inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+text-shadow:1px 1px #222;
+}
+
+@media (not(hover)){
+button:not(:disabled):hover {
+box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey}
+}
+
+.title-bar-controls button:focus {
+outline:1px dotted #000;
+outline-offset:-4px;
+}
+
+.title-bar-controls button::-moz-focus-inner { border:0 }
+    
+@font-face {
+font-family: "Pixelated MS Sans Serif";
+src: url("https://files.catbox.moe/1za99g.woff") format("woff");
+src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
+font-weight: normal;
+font-style: normal;
+}   
+
+.title-bar {
+font-family: "Pixelated MS Sans Serif", Arial;
+-webkit-font-smoothing: none;
+font-size: 11px;
+}
+
+.window {
+box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff;
+background: #c0c0c0;
+color:#000;
+padding: 3px;
+width:100%;
+}
+
+.title-bar {
+background:linear-gradient(to right, rgb(71, 0, 69), rgb(167, 12, 167), rgb(250, 142, 246));
+padding: 3px 3px 3px 3px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.title-bar-text {
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0;
+  margin-right: 24px;
+  display: flex;
+  gap: 5px;
+}
+
+.title-bar-controls {
+display: flex;
+}
+
+.title-bar-controls button {
+padding: 0;
+display: block;
+min-width: 16px;
+min-height: 14px;
+}
+
+.title-bar-controls button:active {
+padding: 0;
+}
+
+.title-bar-controls button:focus {
+outline: none;
+}
+
+.title-bar-controls button[aria-label=Minimize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/minimize.svg");
+background-position:bottom 3px left 4px;
+background-repeat:no-repeat
+}
+
+.title-bar-controls button[aria-label=Maximize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/4a2282dd9170cabf730fb5803d1153d86b2e94e3/icon/maximize.svg");
+background-position:top 2px left 3px;
+background-repeat:no-repeat;
+}
+
+.title-bar-controls button[aria-label=Close]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/close.svg");
+background-position:top 3px left 4px;
+background-repeat:no-repeat;
+margin-left:2px;
+}
+
+.window-body {
+margin: 3px 2px 3px 0;
+}
+
+/* literally only part ive custom coded so it scrolls . i also like the effect the fieldset adds */
+.fieldset {
+--fieldset-padding: 7px;
+border:1px gray solid;
+box-shadow: white 1px 1px 0px inset, white 1px 1px 0px, white 0px 1px 0px, white 1px 0px 0px;
+margin:0;
+padding: var(--fieldset-padding);
+height: auto;
+}
+
+.fieldset > hr {
+  margin-inline: calc(-1 * var(--fieldset-padding));
+}
