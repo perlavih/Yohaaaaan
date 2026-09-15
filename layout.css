@@ -369,6 +369,8 @@ article.interesses {
 
 .listas {
   display: flex;
+  width: 100%;
+  min-width: 0;
   flex-direction: row;
   justify-content: space-around;
   gap: 15px;
@@ -377,6 +379,9 @@ article.interesses {
 .lista {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .lista > ul {
@@ -389,7 +394,7 @@ article.interesses {
 .lista li {
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 7px;
   text-align: left;
 }
@@ -398,6 +403,7 @@ article.interesses {
   content: "";
   flex: 0 0 16px;
   height: 16px;
+  margin-top: max(0px, calc((1lh - 16px) / 2));
   background: url(assets/stickers/pngwing.png) center / contain no-repeat;
 }
 
